@@ -38,10 +38,11 @@ jobs:
         run: |
           set -euo pipefail
 
-          BRANCH=$(echo "$THIS_FILE" | cut -d '.' -f4)
-          if [[ "$BRANCH" == "${{ github.ref_name }}" ]]; then
-            echo "::set-output name=continue::yes"
-          fi
+          # BRANCH=$(echo "$THIS_FILE" | cut -d '.' -f4)
+          # if [[ "$BRANCH" == "${{ github.ref_name }}" ]]; then
+          #   echo "::set-output name=continue::yes"
+          # fi
+          echo "::set-output name=continue::yes"
 
   args:
     needs: [shim]
